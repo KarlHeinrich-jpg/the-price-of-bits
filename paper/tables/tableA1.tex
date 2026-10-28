@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Variable definitions and data sources.}
+\label{tab:vars}
+\begin{threeparttable}
+\begin{tabular}{p{3.2cm}p{8.4cm}p{3.2cm}}
+\toprule
+Variable & Definition & Source \\
+\midrule
+TDDI & Equal-weighted average of the A--D term frequencies, log-transformed and standardized & 2019 annual reports; authors' construction \\
+FPDCI & Log-standardized frequency of first-party data terms & 2019 annual reports; authors' construction \\
+Tobin's Q & (Equity market value + total liabilities) / total assets & Eastmoney \\
+Log Tobin's Q & Natural logarithm of Tobin's Q & Authors' calculation \\
+ROA & Net profit attributable to the parent / total assets & Eastmoney \\
+Gross margin & (Operating revenue $-$ operating costs) / operating revenue & Eastmoney \\
+Selling-expense ratio & Selling expenses / operating revenue & Eastmoney \\
+Period-expense ratio & (Selling + administrative expenses) / operating revenue & Eastmoney \\
+Firm size & Natural logarithm of total assets & Authors' calculation \\
+Leverage & Total liabilities / total assets & Authors' calculation \\
+Cash ratio & Cash holdings / total assets & Authors' calculation \\
+High TDDI & Top third of the TDDI distribution & Authors' construction \\
+Post & 2021Q3 and later & Authors' construction \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Notes: Financial variables are quarterly. Flow variables are differenced from year-to-date cumulative values. Ratio variables are winsorized at the 1st and 99th percentiles.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -1,0 +1,25 @@
+\section{Data and Sample}
+\label{sec:data}
+
+\subsection{Sample Construction}
+
+The sample frame consists of Chinese A-share firms in 11 data-intensive industries: IT services, software development, communication services, advertising and marketing, publishing, gaming, education, film and cinema, internet e-commerce, digital media, and broadcasting. These industries cover the main segments of the digital economy, including e-commerce, digital media, advertising, data services, and platform-mediated transactions. In 2021Q1, the frame contained 384 non-ST, non-delisted firms.
+
+We construct the sample in three steps. First, we exclude firms that listed after 2019 and therefore lack a 2019 annual report, as well as firms whose annual-report files are unavailable; this removes 86 firms. Second, we retain firms with a parseable 2019 annual report and complete financial and market data, leaving 298 firms. Third, we use quarterly observations from 2018Q1 to 2023Q4. The final panel contains 6,900 firm-quarter observations, with 3,933 pre-shock and 2,967 post-shock observations. Table \ref{tab:desc} reports the sample construction and descriptive statistics.
+
+\subsection{Data Sources and Variables}
+
+Financial statement data are from the Eastmoney data center. The data include total assets, total liabilities, total equity, cash holdings, operating revenue, operating costs, selling expenses, administrative expenses, operating profit, and net profit attributable to the parent. Market capitalization is the total market value at the last trading day of each quarter, also from Eastmoney; when the market value is missing, we infer it from the price-to-book ratio multiplied by book equity. Stock price and index data from Sina Finance are used to cross-check quarter-end market values. Annual-report texts are from the CNINFO and Eastmoney disclosure platforms.
+
+Tobin's Q is defined as the sum of equity market value and total liabilities divided by total assets. Log Tobin's Q is its natural logarithm. ROA is net profit divided by total assets. Gross margin is operating revenue minus operating costs, divided by operating revenue. The selling-expense ratio is selling expenses divided by operating revenue; the period-expense ratio is the sum of selling and administrative expenses divided by operating revenue. Firm size is the natural logarithm of total assets; leverage is total liabilities divided by total assets; the cash ratio is cash holdings divided by total assets. All ratio variables are winsorized at the 1st and 99th percentiles.
+
+Quarterly flow variables are obtained by differencing year-to-date cumulative items. Q1 equals the cumulative Q1 value; Q2 equals the half-year value minus Q1; Q3 equals the nine-month value minus the half-year value; Q4 equals the annual value minus the nine-month value. This conversion removes seasonality from cumulative reporting and makes ROA, gross margin, and expense ratios comparable across quarters. Observations with missing intermediate quarters are treated as missing rather than interpolated. Appendix Table 
+ef{tab:vars} lists variable definitions and sources.
+
+\subsection{Descriptive Statistics}
+
+Panel B of Table \ref{tab:desc} reports the descriptive statistics. The average Tobin's Q is 2.80, and the average log Tobin's Q is 0.86. The average ROA is 0.3\%, the average gross margin is 36.0\%, the average selling-expense ratio is 11.7\%, and the average period-expense ratio is 23.1\%. Between the pre- and post-shock periods, Tobin's Q declines from 2.96 to 2.60, log Tobin's Q from 0.90 to 0.81, and gross margin from 37.2\% to 34.4\%. These raw differences mix the privacy shock with macroeconomic conditions, industry cycles, and compositional changes; they provide magnitudes, not causal effects.
+
+The high-TDDI group contains 100 firms, and the remaining 198 firms form the comparison group. The high-TDDI firms had a combined equity market value of RMB 1.72 trillion in 2021Q1, or 46\% of the sample total. Third-party data dependence is therefore not a marginal phenomenon in the Chinese digital capital market. The industry distribution and the TDDI distribution appear in Section 6 and Figure \ref{fig:tddi}.
+
+\input{tables/table1}

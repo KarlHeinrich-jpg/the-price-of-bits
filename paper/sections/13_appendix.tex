@@ -1,0 +1,24 @@
+\appendix
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\section{Variable Definitions}
+\label{app:vars}
+
+Table \ref{tab:vars} lists the variables used in the analysis, their definitions, and their sources. Financial variables are quarterly. Flow variables are differenced from year-to-date cumulative values, and ratio variables are winsorized at the 1st and 99th percentiles.
+
+\input{tables/tableA1}
+
+\section{TDDI Lexicon}
+\label{app:lexicon}
+
+Table \ref{tab:lexicon} lists the six constructs of the TDDI lexicon and representative terms. The longest-match rule ensures that each character span is counted once. Frequencies are normalized per 10,000 characters. The complete term list is in the replication code.
+
+\input{tables/tableA2}
+
+\section{Event-Study Coefficients}
+\label{app:event}
+
+Table \ref{tab:event} reports the full event-study coefficients underlying Figure \ref{fig:event}. The omitted period is 2021Q1. The joint test on the leads yields $p=0.079$.
+
+\input{tables/table7}

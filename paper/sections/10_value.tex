@@ -1,0 +1,30 @@
+\section{The Data Risk Exposure}
+\label{sec:value}
+
+\subsection{From Coefficients to Market Value}
+
+The baseline coefficient can be translated into an implied change in firm value. By the definition of Tobin's Q, $Q_{it}=(M_{it}+D_{it})/A_{it}$, where $M$ is equity market value and $D$ is total liabilities. For small changes, the proportional change in log Tobin's Q is approximately the proportional change in the sum of equity value and liabilities. For a high-TDDI firm $i$, using 2021Q1 as the base period, the implied market-value loss is
+\begin{equation}
+\widehat{\Delta M}_i=\hat{\beta}\left(M_{i,2021Q1}+D_{i,2021Q1}\right),
+\label{eq:dmv}
+\end{equation}
+where $\hat{\beta}=-0.0917$ is the binary coefficient in column (1) of Table \ref{tab:main}. Summing $\widehat{\Delta M}_i$ over the 100 high-TDDI firms gives the sample-level data risk exposure. The confidence interval uses the standard error of $\hat{\beta}$ times $\pm1.96$ and the same base-period value.
+
+Table \ref{tab:value} reports the results by industry. The total implied market-value loss for high-TDDI firms is about RMB 203.7 billion, with a 95\% confidence interval of RMB 54.7--352.8 billion. Software development has the largest loss (RMB 61.5 billion), followed by communication services (RMB 35.2 billion), advertising and marketing (RMB 25.7 billion), IT services (RMB 23.1 billion), and gaming (RMB 16.0 billion). The ranking differs from the TDDI ranking because absolute losses depend on both exposure intensity and market value. Advertising has the highest average TDDI, but its high-TDDI firms are smaller on average, so the absolute loss is lower than in software and communication services.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig5_value_by_industry.pdf}
+\caption{Implied market-value loss of high-TDDI firms by industry. Bars are the implied loss from applying the baseline log Tobin's Q coefficient ($-0.0917$) to the sum of 2021Q1 equity market value and liabilities. Units are RMB billion. The sample contains the 100 high-TDDI firms.}
+\label{fig:value}
+\end{figure}
+
+\subsection{Interpreting the Estimate}
+
+The RMB 203.7 billion figure is a data risk exposure, not the total value of data assets. It has three interpretations. First, it is a firm-side private cost: the privacy regime reduces the expected rents from third-party data, and the market adjusts valuations accordingly. It does not include the consumer privacy benefits or the welfare effects of the regulation. Second, it covers a narrow asset class: third-party tracking, advertising, and data-service data. First-party data, algorithms, brands, network effects, and user relationships are outside the calculation. Third, it is a market revaluation of future rents, not the historical cost of acquiring data or the replacement cost of data infrastructure.
+
+For data-asset accounting, the estimate provides an operational benchmark. Current data-asset recognition focuses on internally generated data resources and uses cost or income approaches. The risk exposure from third-party data dependence is not yet a standard accounting item. Our results show that third-party data dependence is a measurable, priceable, and industry-specific risk factor. For regulators, the magnitude indicates that the cost of privacy regulation is not borne only by consumers; B2B data-service firms and data-dependent software and communication firms bear a substantial adjustment cost. For investors, the TDDI can serve as an ex ante observable risk indicator for data-intensive firms.
+
+The estimate can also be read as a lower bound on the value of the affected data. It captures only the portion of data rents that the market expected to be lost under the 2021 regime. If firms adapt by building first-party data, using privacy-enhancing technologies, or changing their advertising mix, the long-run loss may be smaller. If the shock also reduced the option value of future data-driven products, the total value of the affected data would be larger. The point estimate is a benchmark, and the confidence interval reflects the uncertainty in the valuation coefficient.
+
+\input{tables/table6}

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.synctex.gz
+paper/preview/
+real_data/text/pdf/
+real_data/text/mda/
+.DS_Store
+Thumbs.db

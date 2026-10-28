@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Robustness checks for log Tobin's Q.}
+\label{tab:robust}
+\begin{threeparttable}
+\begin{tabular}{lcccc}
+\toprule
+ & Coefficient & Standard error & $p$-value & Observations \\
+\midrule
+Baseline: high TDDI & -0.0917*** & (0.0343) & 0.007 & 6,900 \\
+Narrow TDDI measure & -0.0824** & (0.0355) & 0.020 & 6,900 \\
+Placebo: generic digitalization & -0.0214 & (0.0193) & 0.268 & 6,900 \\
+Horse race: TDDI and generic digitalization & -0.0748** & (0.0363) & 0.039 & 6,900 \\
+Excluding 2020 & -0.0932*** & (0.0339) & 0.006 & 5,733 \\
+Balanced panel (at least 20 quarters) & -0.0976*** & (0.0344) & 0.005 & 6,458 \\
+Excluding the top 1\% by assets & -0.0945*** & (0.0351) & 0.007 & 6,831 \\
+Controlling for the 2020--2021 pandemic interaction & -0.1027*** & (0.0396) & 0.009 & 6,900 \\
+Two-way clustering (firm and quarter) & -0.0917*** & (0.0339) & 0.007 & 6,900 \\
+Winsorizing at the 5th and 95th percentiles & -0.0777** & (0.0329) & 0.018 & 6,900 \\
+Top third versus bottom third & -0.1067** & (0.0443) & 0.016 & 4,631 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Notes: All columns use log Tobin's Q as the dependent variable and include firm fixed effects, industry-by-quarter fixed effects, and controls. The wild cluster bootstrap $p$-value for the baseline coefficient is 0.007 (999 replications). The generic digitalization index is the standardized frequency of category F terms; it should be insignificant if the TDDI captures a distinct construct.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

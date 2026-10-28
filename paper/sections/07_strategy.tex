@@ -1,0 +1,50 @@
+\section{Empirical Strategy}
+\label{sec:strategy}
+
+\subsection{Baseline Difference-in-Differences}
+
+Let $Y_{it}$ be an outcome for firm $i$ in quarter $t$. Let $\text{HighTDDI}_i$ indicate that firm $i$ is in the top third of the TDDI distribution, and let $\text{Post}_t$ indicate 2021Q3 or later. The baseline specification is
+\begin{equation}
+Y_{it}=\alpha_i+\lambda_{s(i)t}+\beta\left(\text{HighTDDI}_i\times\text{Post}_t\right)+\Gamma'X_{i,t-1}+\varepsilon_{it},
+\label{eq:did}
+\end{equation}
+where $\alpha_i$ is a firm fixed effect, $\lambda_{s(i)t}$ is an industry-by-quarter fixed effect, and $X_{i,t-1}$ includes lagged firm size, leverage, and the cash ratio. Standard errors are clustered by firm \cite{cameron2015}. Industry-by-quarter fixed effects absorb industry-level shocks, such as the asymmetric effect of the 2020 pandemic on online and offline industries, and the 2022 repricing of technology stocks. Firm fixed effects absorb time-invariant firm characteristics; under heterogeneous treatment effects, two-way fixed-effect estimates require careful interpretation \cite{dechaisemartin2020}. The coefficient $\beta$ measures the differential change in outcomes for high-TDDI firms after the shock, conditional on industry-quarter shocks and observable firm characteristics.
+
+We also estimate a continuous specification:
+\begin{equation}
+Y_{it}=\alpha_i+\lambda_{s(i)t}+\beta\left(\text{TDDI}_i\times\text{Post}_t\right)+\Gamma'X_{i,t-1}+\varepsilon_{it},
+\label{eq:continuous}
+\end{equation}
+where TDDI is standardized. The continuous specification uses the full cross-section of exposure but imposes linearity \cite{callaway2024}. The binary specification compares the top third with the rest and has a transparent economic interpretation, but depends on the threshold. We report both, with the binary specification as the main design and the continuous specification as a complement. Dose-response bins and a top-versus-bottom comparison test the sensitivity of the results to the threshold.
+
+\subsection{Event Study}
+
+To test parallel trends and trace the time path of the effect, we estimate
+\begin{equation}
+Y_{it}=\alpha_i+\lambda_{s(i)t}+\sum_{k\neq-1}\beta_k\left(\text{HighTDDI}_i\times\mathbf{1}[t-t_0=k]\right)+\Gamma'X_{i,t-1}+\varepsilon_{it},
+\label{eq:event}
+\end{equation}
+where $t_0$ is 2021Q2, $k=-1$ (2021Q1) is the omitted reference period, and $k$ runs from $-8$ to $10$ (2019Q1 to 2023Q4). The event-study sample starts in 2019; 2018 is used as a burn-in year and is not included in the dynamic plot, which avoids first-year disclosure differences. If the leads are close to zero and the lags turn negative after the shock, the valuation change occurs after the shock rather than before it.
+
+We report the joint test on the leads and the 95\% confidence interval for each event-time coefficient \cite{rambachan2023}. The joint test is interpreted alongside the sign and magnitude of the individual leads. We also report a placebo test with pseudo-shock dates before 2021, which checks whether high-TDDI firms were already on a different trend.
+
+\subsection{Dose-Response and Threshold Sensitivity}
+
+To reduce reliance on a linear functional form, we divide the TDDI into quintiles and estimate
+\begin{equation}
+Y_{it}=\alpha_i+\lambda_{s(i)t}+\sum_{b=2}^{5}\beta_b\left(\mathbf{1}[\text{TDDI}_i\in Q_b]\times\text{Post}_t\right)+\Gamma'X_{i,t-1}+\varepsilon_{it},
+\label{eq:dose}
+\end{equation}
+where $Q_1$ is the omitted reference group. A monotonic decline in $\beta_b$ indicates a dose-response relationship rather than an effect driven by a single extreme group. We also compare the top third with the bottom third of the TDDI distribution, which uses only the two tails and is therefore less sensitive to the middle group.
+
+\subsection{Placebo Tests and Inference}
+
+We run two placebo tests. First, we assign pseudo-shock dates in 2019Q3 and 2020Q3, restrict the sample to the pre-2021 period, and re-estimate \eqref{eq:did}. If the coefficient is insignificant, the result is not driven by a pre-existing trend or by the pre-pandemic industry cycle. Second, we replace the TDDI with the generic digitalization index and construct a pseudo-treatment variable. If the generic index is insignificant while the TDDI remains significant, the result is not a mechanical reflection of digitalization.
+
+For inference, we report firm-clustered standard errors, two-way clustered standard errors (firm and quarter), and wild cluster bootstrap $p$-values \cite{mackinnon2017}. The baseline wild bootstrap $p$-value is 0.007 (999 replications), consistent with the clustered standard errors. The continuous specification yields a wild bootstrap $p$-value of 0.016. The tables report clustered standard errors; the text reports the more conservative bootstrap results where they differ.
+
+\subsection{Identification and Estimand}
+
+Identification rests on three conditions. First, the TDDI is predetermined: it uses only 2019 annual-report text, which predates ATT and PIPL. Second, conditional parallel trends: absent the privacy shock, high-TDDI and other firms would have followed similar outcome paths after controlling for firm fixed effects, industry-by-quarter fixed effects, and observable characteristics. Third, the shock is exogenous to individual firms: ATT was set by Apple and PIPL by the Chinese legislature, and no single A-share firm could change the timing or content of the rules. The event-study leads and the pseudo-shock tests assess the second condition.
+
+The estimand is the average differential change in valuation and operating outcomes for high-TDDI firms after the 2021 privacy regime. It is not the total value of all data assets, and it is not the social welfare effect of privacy regulation. It is the firm-side market-value exposure to a change in the availability and cost of third-party data. This narrow estimand is what the data can identify, and it is the relevant input for data-asset accounting and for the cost-benefit assessment of privacy rules.

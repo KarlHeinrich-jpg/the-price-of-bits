@@ -1,0 +1,100 @@
+\section{Theoretical Analysis}
+\label{sec:theory}
+
+\subsection{Production with First- and Third-Party Data}
+
+Consider a firm $i$ that produces output $Y_{it}$ using physical capital $K_{it}$, labor $L_{it}$, first-party data $D^{1}_{it}$, and third-party data $D^{3}_{it}$. The production function is
+\begin{equation}
+Y_{it}=A_{it}K_{it}^{\alpha}L_{it}^{\beta}\left(D^{1}_{it}\right)^{\gamma_1}\left(D^{3}_{it}\right)^{\gamma_3},
+\label{eq:production}
+\end{equation}
+with $\alpha,\beta,\gamma_1,\gamma_3>0$ and $\alpha+\beta+\gamma_1+\gamma_3<1$. First-party data are accumulated through the firm's own users, transactions, and applications. Third-party data are purchased or accessed through external vendors, advertising networks, identifiers, and platform interfaces at unit cost $p_3$.
+
+The firm chooses $K$, $L$, and $D^3$ to maximize profit,
+\begin{equation}
+\pi_{it}=Y_{it}-wL_{it}-rK_{it}-p_3D^{3}_{it}.
+\label{eq:profit}
+\end{equation}
+The first-order condition for third-party data is
+\begin{equation}
+\frac{\gamma_3Y_{it}}{D^{3}_{it}}=p_3,
+\label{eq:foc}
+\end{equation}
+which implies $D^{3}_{it}=\gamma_3Y_{it}/p_3$. Substituting back into \eqref{eq:production} gives
+\begin{equation}
+Y_{it}=\left[A_{it}K_{it}^{\alpha}L_{it}^{\beta}\left(D^{1}_{it}\right)^{\gamma_1}\left(\frac{\gamma_3}{p_3}\right)^{\gamma_3}\right]^{\frac{1}{1-\gamma_3}}.
+\label{eq:reduced}
+\end{equation}
+Output and profit are increasing in the productivity of third-party data, $\gamma_3$, and decreasing in its cost, $p_3$.
+
+\subsection{The Privacy Shock and Firm Value}
+
+The 2021 privacy regime raises the effective cost of third-party data. We model the shock as a reduction in the usable stock of third-party data:
+\begin{equation}
+D^{3,\text{post}}_{it}=(1-\phi_i)D^{3,\text{pre}}_{it},
+\label{eq:shock}
+\end{equation}
+where $\phi_i\in(0,1)$ is the exposure of firm $i$. The exposure is larger for firms whose business model relies more heavily on external data. The TDDI is a proxy for $\phi_i$.
+
+For a fixed capital stock and labor input, output after the shock is
+\begin{equation}
+Y^{\text{post}}_{it}=(1-\phi_i)^{\gamma_3}Y^{\text{pre}}_{it}.
+\label{eq:outputshock}
+\end{equation}
+Firm value is the present value of profits, $V_{it}=E_t\sum_{\tau=0}^{\infty}\delta^{\tau}\pi_{i,t+\tau}$. For small $\phi_i$, the proportional change in firm value is
+\begin{equation}
+\frac{\partial\ln V_{it}}{\partial\phi_i}\approx-\gamma_3.
+\label{eq:value}
+\end{equation}
+Because Tobin's Q is $Q_{it}=V_{it}/A_{it}$ and the asset base is predetermined in the short run, the valuation effect is
+\begin{equation}
+\frac{\partial\ln Q_{it}}{\partial\phi_i}\approx-\gamma_3<0.
+\label{eq:q}
+\end{equation}
+The effect is larger when the output elasticity of third-party data, $\gamma_3$, is higher. Since TDDI is increasing in the firm's reliance on third-party data, \eqref{eq:q} yields the first hypothesis.
+
+\textit{H1 (Valuation effect).} High-TDDI firms experience a larger decline in Tobin's Q after the privacy shock.
+
+\subsection{Gross Margin and Accounting Profit}
+
+The production model treats output price as fixed. In digital markets, third-party data also affect the price that consumers are willing to pay and the efficiency of matching. Let $P_{it}(D^{3}_{it})$ be the unit price, with $P'(\cdot)>0$: better targeting and measurement raise the value of the product to consumers. Let $c$ be the unit cost. The gross margin is
+\begin{equation}
+GM_{it}=1-\frac{c}{P_{it}\left(D^{3}_{it}\right)}.
+\label{eq:gm}
+\end{equation}
+Differentiating with respect to $D^{3}_{it}$ gives
+\begin{equation}
+\frac{\partial GM_{it}}{\partial D^{3}_{it}}=\frac{cP'_{it}\left(D^{3}_{it}\right)}{P_{it}^{2}}>0.
+\label{eq:gmderiv}
+\end{equation}
+A reduction in third-party data lowers the price premium and therefore lowers the gross margin. ROA can respond less because firms cut low-productivity marketing and administrative spending, and because the asset base adjusts slowly. This yields the second hypothesis.
+
+\textit{H2 (Operating effect).} High-TDDI firms experience a decline in gross margin after the shock, while the short-run ROA effect is smaller or statistically insignificant.
+
+\subsection{B2B versus B2C Firms}
+
+The model also implies heterogeneity across business models. Let $\gamma_3/(\gamma_1+\gamma_3)$ be the share of data-related output elasticity attributable to third-party data. B2B data-service firms sell data-intensive services to other firms and obtain data through external purchases, client authorization, and cross-organizational sharing. Their $\gamma_3$ is high and their $D^{1}$ is limited. Consumer internet firms own user accounts, transaction histories, and first-party applications; their $D^{1}$ is high and can substitute for $D^{3}$. The same privacy shock therefore produces a larger valuation decline for B2B data-service firms. This yields the third hypothesis.
+
+\textit{H3 (B2B versus B2C heterogeneity).} The negative valuation effect is concentrated in B2B data-service firms and is weaker or absent in consumer internet firms.
+
+\subsection{First-Party Data as a Substitute or Complement}
+
+To formalize the role of first-party data, suppose that the two data inputs enter through a CES aggregator:
+\begin{equation}
+D_{it}=\left[\kappa\left(D^{1}_{it}\right)^{\rho}+(1-\kappa)\left(D^{3}_{it}\right)^{\rho}\right]^{1/\rho},
+\label{eq:ces}
+\end{equation}
+where $\rho\leq1$ and the elasticity of substitution is $\sigma=1/(1-\rho)$. If $\rho>0$, the two data types are substitutes: a firm with abundant first-party data can replace part of the lost third-party data, and the valuation effect is smaller for high-FPDCI firms. If $\rho<0$, the two data types are complements: first-party data increase the return to third-party data, and high-FPDCI firms may be equally or more exposed. The sign of the moderation is therefore an empirical question. This yields the fourth hypothesis.
+
+\textit{H4 (First-party data moderation).} The moderating effect of FPDCI on the valuation effect can be positive (substitutes) or zero/negative (complements).
+
+\subsection{From Theory to the Estimating Equation}
+
+Combining \eqref{eq:q} with the definition of the shock, the log valuation of firm $i$ in quarter $t$ can be written as
+\begin{equation}
+\ln Q_{it}=\alpha_i+\lambda_{s(i)t}-\beta\left(\text{HighTDDI}_i\times\text{Post}_t\right)+\Gamma'X_{it}+\varepsilon_{it},
+\label{eq:empirical}
+\end{equation}
+where $\alpha_i$ is a firm fixed effect, $\lambda_{s(i)t}$ is an industry-by-quarter fixed effect, $\text{Post}_t$ indicates the post-2021Q3 period, and $\beta$ is proportional to the average $\gamma_3\phi_i$ of high-TDDI firms. The coefficient $\beta$ is the object of the empirical analysis. The model also implies that a continuous TDDI specification should yield a negative coefficient and that the effect should be larger for firms with a higher share of third-party data in production.
+
+Equation~\eqref{eq:empirical} is a reduced-form valuation effect. It combines the direct loss of third-party data with firms' adaptation through first-party data, contextual advertising, and cost reduction, which is the object relevant for asset valuation. ATT and PIPL operate through different margins---consent, measurement, and sharing---and the design estimates their combined effect on firm value.

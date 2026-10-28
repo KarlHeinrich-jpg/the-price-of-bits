@@ -1,0 +1,32 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Baseline difference-in-differences estimates.}
+\label{tab:main}
+\begin{threeparttable}
+\begin{tabular}{lccccc}
+\toprule
+(1) Log Tobin's Q & (2) Tobin's Q & (3) Gross margin & (4) ROA & (5) Selling-expense ratio \\
+\midrule
+\multicolumn{6}{l}{Panel A: High-TDDI firms (top third)} \\
+High TDDI $\times$ Post & -0.0917*** & -0.3596*** & -0.0245** & 0.0004 & -0.0093 \\
+ & (0.0343) & (0.1244) & (0.0110) & (0.0023) & (0.0077) \\
+\midrule
+\multicolumn{6}{l}{Panel B: Continuous TDDI (one-standard-deviation increase)} \\
+TDDI $\times$ Post & -0.0395** & -0.1700*** & -0.0124** & -0.0002 & -0.0018 \\
+ & (0.0171) & (0.0657) & (0.0053) & (0.0013) & (0.0031) \\
+\midrule
+Controls & Yes & Yes & Yes & Yes & Yes \\
+Firm FE & Yes & Yes & Yes & Yes & Yes \\
+Industry $\times$ Quarter FE & Yes & Yes & Yes & Yes & Yes \\
+Observations & 6,900 & 6,900 & 6,897 & 6,900 & 6,866 \\
+$R^2$ & 0.221 & 0.158 & 0.019 & 0.027 & 0.001 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Notes: Standard errors clustered by firm are in parentheses. ***, **, and * denote significance at the 1\%, 5\%, and 10\% levels. Post equals one for 2021Q3 and later. High TDDI indicates the top third of the TDDI distribution; the comparison group is the rest of the sample. Controls include lagged firm size, leverage, and the cash ratio. The TDDI is standardized in Panel B.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

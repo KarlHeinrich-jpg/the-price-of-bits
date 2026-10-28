@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
+\graphicspath{{../figures/}{figures/}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries The Price of Bits: Privacy Shocks, Third-Party Data Dependence, and the Valuation of Digital Firms}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{center}
+Yile Wang $^{1,*}$\\
+\vspace{0.15cm}
+{\small $^{1}$ Affiliation, City, Country; email@example.com}\\
+{\small $^{*}$ Correspondence: email@example.com}
+\end{center}
+
+\vspace{0.2cm}
+
+\section*{Abstract}
+\noindent
+Data are a core production factor of the digital economy, yet their asset value lacks an observable market price. This paper exploits the 2021 Apple App Tracking Transparency (ATT) policy and China's Personal Information Protection Law (PIPL) as a privacy-regime shock. We construct a text-based Third-Party Data Dependency Index (TDDI) from the 2019 annual reports of 298 Chinese A-share digital firms and estimate difference-in-differences models on a firm-quarter panel from 2018Q1 to 2023Q4. Firms in the top third of TDDI experience a 9.2\% relative decline in log Tobin's Q and a 2.45 percentage-point decline in gross margin after the shock; ROA and selling-expense ratios do not change significantly. The effect is concentrated in B2B data-service firms, whereas consumer internet firms are not significantly affected. The implied market-value loss for high-exposure firms is RMB 203.7 billion (95\% CI: 54.7--352.8 billion). These findings quantify the firm-side value of third-party data and inform data-asset accounting and privacy-regulation policy.
+
+\vspace{0.2cm}
+\noindent\textbf{Keywords:} data asset valuation; privacy regulation; third-party data; difference-in-differences; text analysis; digital economy
+
+\vspace{0.1cm}
+\noindent\textbf{JEL Classification:} D22; K21; L86; M31; C23
+
+\vspace{0.3cm}
+
+\input{sections/01_intro}
+\input{sections/02_literature}
+\input{sections/03_theory}
+\input{sections/04_institution}
+\input{sections/05_data}
+\input{sections/06_measurement}
+\input{sections/07_strategy}
+\input{sections/08_results}
+\input{sections/09_mechanism}
+\input{sections/10_value}
+\input{sections/11_discussion}
+\input{sections/12_conclusion}
+
+\section*{Author Contributions}
+Conceptualization, A.N. and C.N.; methodology, A.N.; software, A.N.; validation, A.N. and C.N.; formal analysis, A.N.; data curation, A.N.; writing---original draft preparation, A.N.; writing---review and editing, C.N.; visualization, A.N.; supervision, C.N. All authors have read and agreed to the published version of the manuscript.
+
+\section*{Funding}
+This research received no external funding.
+
+\section*{Institutional Review Board Statement}
+Not applicable.
+
+\section*{Informed Consent Statement}
+Not applicable.
+
+\section*{Data Availability Statement}
+The financial and market data are available from the public databases described in Section 5. The annual-report texts are available from the CNINFO and Eastmoney disclosure platforms. The constructed panel and replication code are available from the corresponding author upon reasonable request.
+
+\section*{Conflicts of Interest}
+The authors declare no conflicts of interest.
+
+\input{sections/13_appendix}
+
+\input{sections/references}
+
+\end{document}

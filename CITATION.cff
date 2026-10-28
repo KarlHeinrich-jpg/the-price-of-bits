@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper and the repository."
+title: "The Price of Bits: Privacy Shocks, Third-Party Data Dependence, and the Valuation of Digital Firms"
+authors:
+  - family-names: Wang
+    given-names: Yile
+year: 2026
+version: "1.0.0"
+url: "https://github.com/KarlHeinrich-jpg/the-price-of-bits"
+keywords:
+  - data asset valuation
+  - privacy regulation
+  - third-party data
+  - difference-in-differences
+  - text analysis
+  - digital economy
+license: CC-BY-4.0
